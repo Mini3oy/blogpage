@@ -1,0 +1,83 @@
+/* Slidebar.module.css */
+.sidenav {
+    height: 100%;
+    width: 250px; /* ปรับขนาดได้ตามต้องการ */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 15px 8px 15px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+    background-color: #818181;
+  }
+  .sidenav button:hover {
+    color: #f1f1f1;
+    background-color: #818181;
+  }
+  .sidenav h2{
+    text-align: center;
+   }
+  
+
+  .logout {
+    position: absolute;
+    bottom: 0; /* ให้ logout อยู่ล่างสุด */
+    width: 100%;
+    background-color: #111; /* ให้พื้นหลังโปร่งใส */
+    border: none; /* ไม่แสดงขอบ */
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer เมื่อ hover */
+    color: #818181;
+    font-size: 20px;
+
+    margin-bottom: 20px;
+}
+.header{
+    background-color: #111;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: fixed; /* ให้ Header อยู่กับที่ */
+    top: 0;
+    width: 100%;
+    z-index: 0; /* ให้ Header อยู่บนสุด */
+}
+
+.menuButton {
+    display: none; /* ซ่อนปุ่มบนหน้าจอใหญ่ */
+  }
+  
+  @media (max-width: 768px) { 
+    .sidenav {
+      transform: translateX(-100%); /* ซ่อน slidebar ตอนแรก */
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .sidenav.open {
+      transform: translateX(0); /* แสดง slidebar เมื่อเปิด */
+    }
+  
+    .menuButton {
+      display: block; /* แสดงปุ่มบนมือถือ */
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 2; /* ให้ปุ่มอยู่บนสุด */
+    }
+  }
